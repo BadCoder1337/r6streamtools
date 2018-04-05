@@ -4,9 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var http = require('http');
 
 var app = express();
-var io = require('socket.io').listen(app.listen(3333));
+var server = http.createServer(app);
+var io = require('socket.io').listen(server); 
+server.listen(3333);
 
 var index = require('./routes/index');
 //var socket = require('./routes/socket.io');
