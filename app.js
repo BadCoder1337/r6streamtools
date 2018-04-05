@@ -5,14 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
+var socketIO = require('socket.io');
+
+var PORT = process.env.PORT || 5000;
 
 var app = express();
 var server = http.createServer(app);
-var io = require('socket.io')({
-  'transports': ['xhr-polling'],
-  'polling duration':  10
-}).listen(server); 
-server.listen(3333);
+var io = socketIO(server);
 
 var index = require('./routes/index');
 //var socket = require('./routes/socket.io');
@@ -32,17 +31,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 //app.use('/', socket);
 
-io.sockets.on('connection', function (socket) {
-  console.log('client connected');
-  socket.on('message', function (msg) {
-    console.log('recieve msg: ', msg);
-    socket.broadcast.json.send(msg);
-  });
-  socket.on('disconnect', function () {
-    console.log('client disconnected');
-  })
-});
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -61,4 +49,18 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+io.sockets.on('connection', function (socket) {
+  console.log('client connected');
+  socket.on('message', function (msg) {
+    console.log('recieve msg: ', msg);
+    socket.broadcast.json.send(msg);
+  });
+  socket.on('disconnect', function () {
+    console.log('client disconnected');
+  })
+});
+
+
+server.listen(PORT, () => console.log(`Listening on ${PORT}`))
+
+//module.exports = app;
