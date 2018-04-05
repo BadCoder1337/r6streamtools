@@ -1,11 +1,360 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <style type="text/css" id="gwd-text-style">p {
+    margin: 0px;
+}
+h1 {
+    margin: 0px;
+}
+h2 {
+    margin: 0px;
+}
+h3 {
+    margin: 0px;
+}</style>
+  <style type="text/css">
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    .gwd-page-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .gwd-page-content {
+      background-color: transparent;
+      position: absolute;
+    }
+    .gwd-page-wrapper {
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      transform: translateZ(0px);
+    }
+    .gwd-page-size {
+      width: 100%;
+      height: 100%;
+    }
+    .team-block {
+      position: absolute;
+      background-color: transparent;
+      width: 500px;
+      top: 75px;
+      background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0) 1%, rgb(66, 66, 66) 98%);
+      height: 748px;
+    }
+    .team-block-right {
+      left: 1320px;
+    }
+    .team-block-left {
+      left: 100px;
+    }
+    .footer-image {
+      position: absolute;
+      width: 180px;
+      height: 102px;
+      transform-origin: 106px 60px 0px;
+      top: 928px;
+    }
+    .footer-text {
+      position: absolute;
+      font-family: "Roboto Condensed";
+      color: white;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 45px;
+      width: 180px;
+      height: 45px;
+      font-size: 20px;
+      top: 1030px;
+    }
+    .footer-div {
+      position: absolute;
+      width: 1920px;
+      left: 0px;
+      background-image: none;
+      background-color: rgb(66, 66, 66);
+      height: 182px;
+      top: 898px;
+    }
+    .footer-bank {
+      left: 30px;
+    }
+    .footer-border {
+      left: 240px;
+    }
+    .footer-chalet {
+      left: 450px;
+    }
+    .footer-clubhouse {
+      left: 660px;
+    }
+    .footer-coastline {
+      left: 870px;
+    }
+    .footer-consulate {
+      left: 1080px;
+    }
+    .footer-kafe {
+      left: 1290px;
+    }
+    .footer-oregon {
+      left: 1500px;
+    }
+    .footer-skyscraper {
+      left: 1710px;
+    }
+    .background-logo {
+      position: absolute;
+      width: 1920px;
+      height: 1080px;
+      left: 0px;
+      top: 0px;
+    }
+    .team-title-block {
+      position: absolute;
+      background-image: none;
+      background-color: rgb(33, 33, 33);
+      width: 460px;
+      height: 110px;
+      left: 20px;
+      top: 20px;
+    }
+    .team-logo {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 5px;
+      left: 5px;
+    }
+    .team-title-text {
+      position: absolute;
+      font-family: "Roboto Condensed";
+      color: rgb(255, 255, 255);
+      left: 110px;
+      height: 100px;
+      top: 5px;
+      width: 345px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 100px;
+      font-size: 70px;
+    }
+    .team-action1 {
+      top: 140px;
+      background-color: rgb(229, 57, 53);
+    }
+    .team-action2 {
+      top: 292px;
+      background-color: rgb(229, 57, 53);
+    }
+    .team-action3 {
+      top: 444px;
+      background-color: rgb(229, 57, 53);
+    }
+    .team-action4 {
+      top: 596px;
+      background-color: rgb(67, 160, 71);
+    }
+    .team-action-block {
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right center;
+      /* background-image: url("images/maps/oregon.jpg"); */
+      height: 142px;
+      left: 30px;
+      width: 440px;
+    }
+    .decider {
+      position: absolute;
+      top: 712px;
+      background-color: rgb(67, 160, 71);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right center;
+      /* background-image: url("images/maps/oregon.jpg"); */
+      height: 142px;
+      width: 440px;
+      left: 740px;
+    }
+    .glyph-placeholder {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      left: 45px;
+      top: 20px;
+    }
+    .team-action-text {
+      position: absolute;
+      left: 188px;
+      width: 252px;
+      font-family: "Roboto Condensed";
+      font-size: 30px;
+      color: rgb(255, 255, 255);
+      height: 30px;
+      top: 56px;
+      vertical-align: middle;
+      text-align: center;
+      line-height: 30px;
+      background-image: none;
+      background-color: rgb(97, 97, 97);
+    }
+    .footer-overlay {
+      background-color: rgba(97, 97, 97, 0.5);
+    }
+    .footer-overlay-logo {
+      position: absolute;
+      margin: auto;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" type="text/css">
+  <script data-source="googbase_min.js" data-version="4" data-exports-type="googbase" src="javascripts/googbase.min.js"></script>
+  <script data-source="webcomponents_min.js" data-version="5" data-exports-type="gwd_webcomponents" src="javascripts/webcomponents.min.js"></script>
+  <script data-source="page_min.js" data-version="12" data-exports-type="gwd-page" src="javascripts/page.min.js"></script>
+  <script data-source="pagedeck_min.js" data-version="11" data-exports-type="gwd-pagedeck" src="javascripts/pagedeck.min.js"></script>
+  <script data-source="image_min.js" data-version="11" data-exports-type="gwd-image" src="javascripts/image.min.js"></script>
+</head>
+
+<body>
+      
+        <div class="gwd-page-content gwd-page-size">
+          <img is="gwd-image" source="images/background.png" id="img-bg" class="background-logo">
+          
+          <div class="team-block team-block-left">
+            <div class="team-title-block">
+              <img is="gwd-image" source="images/teams/<%= team[0].logo %>.png" id="img-logo-left" class="team-logo">
+              <p class="team-title-text"><%= team[0].title %></p>
+            </div>
+            <div id="L1" style="display: none;" class="team-action1 team-action-block">
+              <div class="glyph-placeholder"><i class="material-icons" style="font-size: 100px;"></i>
+              </div>
+              <p class="team-action-text"></p>
+            </div>
+            <div id="L2" style="display: none;" class="team-action2 team-action-block">
+              <div class="glyph-placeholder"><i class="material-icons" style="font-size: 100px;"></i>
+              </div>
+              <p class="team-action-text"></p>
+            </div>
+            <div id="L3" style="display: none;" class="team-action3 team-action-block">
+              <div class="glyph-placeholder"><i class="material-icons" style="font-size: 100px;"></i>
+              </div>
+              <p class="team-action-text"></p>
+            </div>
+            <div id="L4" style="display: none;" class="team-action4 team-action-block">
+              <div class="glyph-placeholder"><i class="material-icons" style="font-size: 100px;"></i>
+              </div>
+              <p class="team-action-text"></p>
+            </div>
+          </div>
+
+          <div style="display: none;" class="decider">
+            <div class="glyph-placeholder">
+              <img is="gwd-image" source="images/icons/hand-shake.svg" id="img-decider">
+            </div>
+            <p class="team-action-text"></p>
+          </div>
+
+          <div class="team-block team-block-right">
+            <div class="team-title-block">
+              <img is="gwd-image" source="images/teams/<%= team[1].logo %>.png" id="img-logo-right" class="team-logo">
+              <p class="team-title-text"><%= team[1].title %></p>
+            </div>
+            <div style="display: none;" id="R1" class="team-action1 team-action-block">
+              <div class="glyph-placeholder"><i class="material-icons" style="font-size: 100px;"></i>
+              </div>
+              <p class="team-action-text"></p>
+            </div>
+            <div style="display: none;" id="R2" class="team-action2 team-action-block">
+              <div class="glyph-placeholder"><i class="material-icons" style="font-size: 100px;"></i>
+              </div>
+              <p class="team-action-text"></p>
+            </div>
+            <div style="display: none;" id="R3" class="team-action3 team-action-block">
+              <div class="glyph-placeholder"><i class="material-icons" style="font-size: 100px;"></i>
+              </div>
+              <p class="team-action-text"></p>
+            </div>
+            <div style="display: none;" id="R4" class="team-action4 team-action-block">
+              <div class="glyph-placeholder"><i class="material-icons" style="font-size: 100px;"></i>
+              </div>
+              <p class="team-action-text"></p>
+            </div>
+          </div>
+
+          <div class="footer-div"></div>
+          <img is="gwd-image" source="images/maps/bank.jpg" id="img-bank" class="footer-image footer-bank gwd-img-182d">
+          <img is="gwd-image" source="images/maps/border.jpg" id="img-border" class="footer-image footer-border gwd-img-lsrl">
+          <img is="gwd-image" source="images/maps/chalet.jpg" id="img-chalet" class="footer-image footer-chalet">
+          <img is="gwd-image" source="images/maps/clubhouse.jpg" id="img-clubhouse" class="footer-image footer-clubhouse">
+          <img is="gwd-image" source="images/maps/coastline.jpg" id="img-coastline" class="footer-image footer-coastline">
+          <img is="gwd-image" source="images/maps/consulate.jpg" id="img-consulate" class="footer-image footer-consulate">
+          <img is="gwd-image" source="images/maps/kafe.jpg" id="img-kafe" class="footer-image footer-kafe">
+          <img is="gwd-image" source="images/maps/oregon.jpg" id="img-oregon" class="footer-image footer-oregon">
+          <img is="gwd-image" source="images/maps/skyscraper.jpg" id="img-skyscraper" class="footer-image footer-skyscraper">
+          <div class="footer-bank footer-text">BANK</div>
+          <div class="footer-border footer-text">BORDER</div>
+          <div class="footer-chalet footer-text">CHALET</div>
+          <div class="footer-clubhouse footer-text">CLUBHOUSE</div>
+          <div class="footer-coastline footer-text">COASTLINE</div>
+          <div class="footer-consulate footer-text">CONSULATE</div>
+          <div class="footer-kafe footer-text">KAFE DOSTOYEVSKY</div>
+          <div class="footer-oregon footer-text">OREGON</div>
+          <div class="footer-skyscraper footer-text">SKYSCRAPER</div>
+          <div id="overlay-bank" style="display: none;" class="footer-image footer-bank footer-overlay">
+            <img is="gwd-image" source="" class="footer-overlay-logo">
+          </div>
+          <div id="overlay-border" style="display: none;" class="footer-image footer-border footer-overlay">
+            <img is="gwd-image" source="" class="footer-overlay-logo">
+          </div>
+          <div id="overlay-chalet" style="display: none;" class="footer-image footer-chalet footer-overlay">
+            <img is="gwd-image" source="" class="footer-overlay-logo">
+          </div>
+          <div id="overlay-clubhouse" style="display: none;" class="footer-image footer-clubhouse footer-overlay">
+            <img is="gwd-image" source="" class="footer-overlay-logo">
+          </div>
+          <div id="overlay-coastline" style="display: none;" class="footer-image footer-coastline footer-overlay">
+            <img is="gwd-image" source="" class="footer-overlay-logo">
+          </div>
+          <div id="overlay-consulate" style="display: none;" class="footer-image footer-consulate footer-overlay">
+            <img is="gwd-image" source="" class="footer-overlay-logo">
+          </div>
+          <div id="overlay-kafe" style="display: none;" class="footer-image footer-kafe footer-overlay">
+            <img is="gwd-image" source="" class="footer-overlay-logo">
+          </div>
+          <div id="overlay-oregon" style="display: none;" class="footer-image footer-oregon footer-overlay">
+            <img is="gwd-image" source="" class="footer-overlay-logo">
+          </div>
+          <div id="overlay-skyscraper" style="display: none;" class="footer-image footer-skyscraper footer-overlay">
+            <img is="gwd-image" source="" class="footer-overlay-logo">
+          </div>
+        </div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>var socketUri = `${location.protocol}//${location.hostname}:${3333}`;</script>
+    <script src="http://r6streamtools.herokuapp.com:3333/socket.io/socket.io.js"></script>
+    <script src="javascripts/ioclient.js"></script>
+    <!-- <script>
+      
+      let s1 = document.createElement("script");
+      s1.type = "text/javascript";
+      s1.src = socketUri + "/socket.io/socket.io.js";
+      $("body").append(s1);
+      console.log(io);
+      let s2 = document.createElement("script");
+      s2.type = "text/javascript";
+      s2.src = "javascripts/ioclient.js";
+      $("body").append(s2);
+    </script> -->
+
+</body></html>
