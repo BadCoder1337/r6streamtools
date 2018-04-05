@@ -8,7 +8,10 @@ var http = require('http');
 
 var app = express();
 var server = http.createServer(app);
-var io = require('socket.io').listen(server); 
+var io = require('socket.io')({
+  'transports': ['xhr-polling'],
+  'polling duration':  10
+}).listen(server); 
 server.listen(3333);
 
 var index = require('./routes/index');
