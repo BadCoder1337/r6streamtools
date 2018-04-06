@@ -1,9 +1,23 @@
 var express = require('express');
 var router = express.Router();
+var cmds = require('../lib/commands');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { team: [{ title: "BOMJ", logo: "BMJ"}, { title: "CatPawz", logo: "CPZ"}] });
+router.get('/', async function(req, res, next) {
+  if (!!req.query.id) {
+    let match = await cmds.getMatch(req.query.id);
+    console.log('req.query.id: ', req.query.id);
+    console.log(match);
+    if (match.id) {
+      res.render('index', { team: [{ title: match.title1, logo: match.team1}, { title: match.title2, logo: match.team2}] });
+    } else {
+      let err = new ReferenceError('Wrong ID');
+      res.render('error', { message: err.message , error: err});
+    }
+  } else {
+    let err = new ReferenceError('Wrong ID');
+    res.render('error', { message: err.message , error: err});
+  }
 });
 
 module.exports = router;
