@@ -5,7 +5,10 @@
   "scripts": {
     "start": "node app.js",
     "test": "nodemon app.js",
-    "discord": "cd lib & nodemon discord.js"
+    "discord": "cd lib & nodemon discord.js",
+    "off": "heroku ps:scale web=0 -a r6streamtools",
+    "on": "heroku ps:scale web=1 -a r6streamtools",
+    "logs": "heroku logs -a r6streamtools --tail"
   },
   "dependencies": {
     "bluebird": "^3.5.1",

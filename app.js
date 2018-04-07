@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 var socketIO = require('socket.io');
-var bot = require('./lib/discord')
+var bot = require('./lib/discord');
 
 var PORT = process.env.PORT || 5000;
 
@@ -54,15 +54,16 @@ app.use(function(err, req, res, next) {
 
 io.sockets.on('connection', function (socket) {
   console.log('client connected');
-  socket.on('message', function (msg) {
-    console.log('recieve msg: ', msg);
-    socket.broadcast.json.send(msg);
-  });
   socket.on('disconnect', function () {
     console.log('client disconnected');
+
   })
 });
 
+bot.events.on('message', function (msg) {
+  console.log('recieve bot msg: ', msg);
+  io.sockets.json.send(msg);
+})
 
 server.listen(PORT, () => console.log(`Listening on ${PORT}`))
 

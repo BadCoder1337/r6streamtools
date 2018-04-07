@@ -9,7 +9,7 @@ router.get('/', async function(req, res, next) {
     console.log('req.query.id: ', req.query.id);
     console.log(match);
     if (match.id) {
-      res.render('index', { team: [{ title: match.title1, logo: match.team1}, { title: match.title2, logo: match.team2}] });
+      res.render('index', { team: [{ title: match.title1, logo: match.code1}, { title: match.title2, logo: match.code2}] });
     } else {
       let err = new ReferenceError('Wrong ID');
       res.render('error', { message: err.message , error: err});
