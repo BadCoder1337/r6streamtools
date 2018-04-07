@@ -8,7 +8,11 @@ router.get('/', async function(req, res, next) {
     let match = await cmds.getMatch(req.query.id);
     console.log('req.query.id: ', req.query.id);
     console.log(match);
-    if (match === undefined) {res.render('error', { message: err.message , error: err}); return}
+    if (match === undefined) {
+      let err = new ReferenceError('Wrong ID');
+      res.render('error', { message: err.message , error: err});
+      return;
+    }
     if (match.id) {
       res.render('index', { team: [{ title: match.title1, logo: match.code1}, { title: match.title2, logo: match.code2}] });
     } else {
