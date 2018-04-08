@@ -9,7 +9,7 @@ function getQueryVariable(variable) {
     }
 }
 
-socket = io.connect(socketUri);
+socket = io.connect(socketUri, { query: 'id='+getQueryVariable('id')});
 socket.on('connect', function () {
     console.log('connected!');
 
@@ -20,12 +20,13 @@ socket.on('connect', function () {
     });
 
     socket.on('message', function (msg) {
+        console.log('msg: ', msg);
         var match = msg.match;
         if (match.id != getQueryVariable('id')) {return;}
         console.log('match recieved');
         var mapAmount = parseInt(match.matchType[2]);
         match.votes.forEach((v, i) => {
-            console.log(v);
+            //console.log(v);
             $(`#A${i}`).css('background-image', `url(images/maps/${v}.jpg)`);
             $(`#A${i} p`).text(match.pool.name[match.pool.id.indexOf(v)].toUpperCase());
             if (i < (9-mapAmount)) {

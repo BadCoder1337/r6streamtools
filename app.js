@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var socketIO = require('socket.io');
 var bot = require('./lib/discord');
+var cmds = require('./lib/commands');
 
 var PORT = process.env.PORT || 5000;
 
@@ -54,6 +55,8 @@ app.use(function(err, req, res, next) {
 
 io.sockets.on('connection', function (socket) {
   console.log('client connected');
+  let match = cmds.getMatch(socket.handshake.query.id);
+  socket.json.send({match: match});
   socket.on('disconnect', function () {
     console.log('client disconnected');
 
