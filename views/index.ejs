@@ -145,7 +145,7 @@ h3 {
     <script src="jquery/jquery.min.js"></script>
     <script src="jquery/textfill.js"></script>
     <script>var socketUri = `${location.protocol}//${location.hostname}:${location.port}`;</script>
-    <script src="http://<%- process.env.LOCAL || 'r6streamtools.herokuapp.com' %>/socket.io/socket.io.js"></script>
+    <script src="<%- process.env.LOCAL || 'https://r6streamtools.herokuapp.com' %>/socket.io/socket.io.js"></script>
     <script src="javascripts/ioclient.js"></script>
     
 </body></html>
