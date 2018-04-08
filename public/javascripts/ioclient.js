@@ -1,10 +1,28 @@
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]) == variable) {
+            return decodeURIComponent(pair[1]);
+        }
+    }
+}
+
 socket = io.connect(socketUri);
 socket.on('connect', function () {
     console.log('connected!');
+
+    socket.on('reload', function (msg) {
+        if (msg.id == getQueryVariable('id')) {
+            location.reload();
+        }
+    });
+
     socket.on('message', function (msg) {
-        console.log('match recieved');
-        console.log(match);
         var match = msg.match;
+        if (match.id != getQueryVariable('id')) {return;}
+        console.log('match recieved');
         var mapAmount = parseInt(match.matchType[2]);
         match.votes.forEach((v, i) => {
             console.log(v);

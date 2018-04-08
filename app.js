@@ -66,6 +66,11 @@ bot.events.on('match', function (match) {
   io.sockets.json.send(match);
 })
 
+bot.events.on('reload', function (msg) {
+  console.log('sending reload');
+  io.sockets.emit('reload', msg);
+});
+
 bot.events.on('message', function (msg) {
   console.log('recieve bot msg: ', msg);
   io.sockets.json.send(msg);
