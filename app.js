@@ -60,6 +60,12 @@ io.sockets.on('connection', function (socket) {
   })
 });
 
+bot.events.on('match', function (match) {
+  console.log('sending match info');
+  console.log(match);
+  io.sockets.json.send(match);
+})
+
 bot.events.on('message', function (msg) {
   console.log('recieve bot msg: ', msg);
   io.sockets.json.send(msg);
