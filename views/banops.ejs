@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style type="text/css">p {margin: 0px;}</style>
+  <link href="stylesheets/banops.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="block block-left">
+
+    <div id="attackers" class="operators-grid-wrapper">
+      <div id="B0" class="icon-overlay" style="display: none;"></div>
+      <div id="B1" class="icon-overlay" style="display: none;"></div>
+      <img class="operators-grid" src="images/attackers.png">
+    </div>
+
+    <div id="defenders" class="operators-grid-wrapper" style="display: none;">
+      <div id="B2" class="icon-overlay" style="display: none;"></div>
+      <div id="B3" class="icon-overlay" style="display: none;"></div>
+      <img class="operators-grid" src="images/defenders.png">
+    </div>
+
+    <div id="attackers" class="pickrates">
+      <div class="pickrates-ops atk-pickrates-op0">
+        <p class="pickrates-title">LION<br>
+          
+          <span class="pickrates-percent">100%</span><br>
+          
+          <i class="material-icons" style="font-size: 110px;"></i>
+        </p>
+      </div>
+      <div class="pickrates-ops atk-pickrates-op1">
+        <p class="pickrates-title">HIBANA<br>
+          
+          <span class="pickrates-percent">71,4%</span><br>
+          
+          <i class="material-icons" style="font-size: 110px;"></i>
+        </p>
+      </div>
+      <div class="pickrates-ops atk-pickrates-op2">
+        <p class="pickrates-title">THERMITE<br>
+          
+          <span class="pickrates-percent">48,6%</span><br>
+          
+          <i class="material-icons" style="font-size: 110px;"></i>
+        </p>
+      </div>
+      <div class="pickrates-ops atk-pickrates-op3">
+        <p class="pickrates-title">THATCHER<br>
+          
+          <span class="pickrates-percent">40%</span><br>
+          
+          <i class="material-icons" style="font-size: 110px;"></i>
+        </p>
+      </div>
+      <div class="pickrates-ops atk-pickrates-op4">
+        <p class="pickrates-title">BLITZ<br>
+          
+          <span class="pickrates-percent">34,3%</span><br>
+          
+          <i class="material-icons" style="font-size: 110px;"></i>
+        </p>
+      </div>
+    </div>
+
+    <!--  style="display: none;"      -->
+    <div id="defenders" class="pickrates" style="display: none;">
+      <div class="pickrates-ops def-pickrates-op0">
+        <p class="pickrates-title">MIRA<br>
+          
+          <span class="pickrates-percent">97,1%</span><br>
+          
+          <i class="material-icons" style="font-size: 110px;"></i>
+        </p>
+      </div>
+      <div class="pickrates-ops def-pickrates-op1">
+        <p class="pickrates-title">SMOKE<br>
+          
+          <span class="pickrates-percent">82,9%</span><br>
+          
+          <i class="material-icons" style="font-size: 110px;"></i>
+        </p>
+      </div>
+      <div class="pickrates-ops def-pickrates-op2">
+        <p class="pickrates-title">JAGER<br>
+          
+          <span class="pickrates-percent">51,4%</span><br>
+          
+          <i class="material-icons" style="font-size: 110px;"></i>
+        </p>
+      </div>
+      <div class="pickrates-ops def-pickrates-op3">
+        <p class="pickrates-title">PULSE<br>
+          
+          <span class="pickrates-percent">37,1%</span><br>
+          
+          <i class="material-icons" style="font-size: 110px;"></i>
+        </p>
+      </div>
+      <div class="pickrates-ops def-pickrates-op4">
+        <p class="pickrates-title">LESION<br>
+          
+          <span class="pickrates-percent">37,1%</span><br>
+          
+          <i class="material-icons" style="font-size: 110px;"></i>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="block block-right">
+    <div class="ban-ops ban-op0" style="display: none;">
+      <img class="ban-ops-logo" src="images/teams/<%= team[0].logo %>.png">
+      <i class="material-icons ban-ops-mark" style="font-size: 150px;">clear</i>
+      <p class="ban-ops-name"></p> 
+      <!-- $(".ban-op0 > .ban-ops-name").text("BLITZ"); -->
+    </div>
+
+    <div class="ban-ops ban-op1" style="display: none;">
+      <img class="ban-ops-logo" src="images/teams/<%= team[1].logo %>.png">
+      <i class="material-icons ban-ops-mark" style="font-size: 150px;">clear</i>
+      <p class="ban-ops-name"></p>
+    </div>
+
+    <div class="ban-ops ban-op2" style="display: none;">
+      <img class="ban-ops-logo" src="images/teams/<%= team[0].logo %>.png">
+      <i class="material-icons ban-ops-mark" style="font-size: 150px;">clear</i>
+      <p class="ban-ops-name"></p>
+    </div>
+
+    <div class="ban-ops ban-op3" style="display: none;">
+      <img class="ban-ops-logo" src="images/teams/<%= team[1].logo %>.png">
+      <i class="material-icons ban-ops-mark" style="font-size: 150px;">clear</i>
+      <p class="ban-ops-name"></p>
+    </div>
+  </div>
+
+  <script src="jquery/jquery.min.js"></script>
+  <script>var socketUri = `${location.protocol}//${location.hostname}:${location.port}`;</script>
+  <script src="<%- process.env.LOCAL || 'https://r6streamtools.herokuapp.com' %>/socket.io/socket.io.js"></script>
+  <script src="javascripts/banOps.js"></script>
+
+</body></html>

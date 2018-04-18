@@ -74,6 +74,11 @@ bot.events.on('reload', function (msg) {
   io.sockets.emit('reload', msg);
 });
 
+bot.events.on('swap', function (msg) {
+  console.log('sending swap');
+  io.sockets.emit('swap', msg);
+})
+
 bot.events.on('message', function (msg) {
   console.log('recieve bot msg: ', msg);
   io.sockets.json.send(msg);

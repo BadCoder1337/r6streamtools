@@ -1,0 +1,187 @@
+html,
+body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0px;
+}
+body {
+    background-color: transparent;
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+}
+.block {
+    position: absolute;
+    height: 1000px;
+    width: 650px;
+    background-color: rgba(102, 102, 102, 0.8);
+}
+.block-left {
+    background-image: none;
+    background-color: rgba(102, 102, 102, 0.8);
+    left: 40px;
+    top: 40px;
+}
+.block-right {
+    left: 1230px;
+    top: 37px;
+}
+.operators-grid {
+    width: 600px;
+    height: 753px;
+    transform-origin: 275.258px 345.04px 0px;
+    -webkit-transform-origin: 275.258px 345.04px 0px;
+    -moz-transform-origin: 275.258px 345.04px 0px;
+}
+.operators-grid-wrapper {
+    position: absolute;
+    margin: auto;
+    right: 0px;
+    bottom: 25px;
+    left: 0px;
+    top: 222px;
+}
+.pickrates {
+    position: absolute;
+    width: 600px;
+    top: 25px;
+    height: 172px;
+    left: 25px;
+    border: 2px solid rgb(33, 56, 68);
+    box-sizing: border-box;
+    background-image: none;
+    background-color: rgba(66, 66, 66, 0.8);
+}
+.pickrates-ops {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    top: 0px;
+    border: 2px solid rgb(33, 56, 68);
+    box-sizing: border-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+.def-pickrates-op0 {
+    left: 0px;
+    background-image: url("../images/operators/mira.png");
+}
+.def-pickrates-op1 {
+    left: 20%;
+    background-image: url("../images/operators/smoke.png");
+}
+.def-pickrates-op2 {
+    left: 40%;
+    background-image: url("../images/operators/jager.png");
+}
+.def-pickrates-op3 {
+    left: 60%;
+    background-image: url("../images/operators/pulse.png");
+}
+.def-pickrates-op4 {
+    left: 80%;
+    background-image: url("../images/operators/lesion.png");
+}
+.atk-pickrates-op0 {
+    left: 0px;
+    background-image: url("../images/operators/lion.png");
+}
+.atk-pickrates-op1 {
+    left: 20%;
+    background-image: url("../images/operators/hibana.png");
+}
+.atk-pickrates-op2 {
+    left: 40%;
+    background-image: url("../images/operators/thermite.png");
+}
+.atk-pickrates-op3 {
+    left: 60%;
+    background-image: url("../images/operators/thatcher.png");
+}
+.atk-pickrates-op4 {
+    left: 80%;
+    background-image: url("../images/operators/blitz.png");
+}
+.operators-grid-wrapper {
+    right: 0px;
+    left: 0px;
+    width: 600px;
+    height: 753px;
+    margin: auto;
+    top: 222px;
+    bottom: 25px;
+}
+.pickrates-title {
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    font-family: "Roboto Condensed";
+    margin: auto;
+    left: 0px;
+    color: white;
+    right: 0px;
+    top: 0px;
+    line-height: 25px;
+}
+.pickrates-percent {
+    font-size: 20px;
+}
+.ban-ops {
+    width: 90%;
+    left: 5%;
+    position: absolute;
+    height: 21.25%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+    background-color: rgb(229, 57, 53);
+}
+.ban-op0 {
+    top: 3%;
+}
+.ban-op1 {
+    top: 27.25%;
+}
+.ban-op2 {
+    bottom: 27.25%;
+}
+.ban-op3 {
+    bottom: 3%;
+}
+.ban-ops-logo {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    top: 0px;
+    bottom: 0px;
+    left: 35px;
+    position: absolute;
+}
+.ban-ops-mark {
+    margin: auto;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    right: 0px;
+    left: 0px;
+}
+.ban-ops-name {
+    position: absolute;
+    font-family: "Roboto Condensed";
+    font-size: 36px;
+    width: 150px;
+    text-align: center;
+    color: white;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    bottom: 10%;
+}
+.icon-overlay {
+    position: absolute;
+    color: black;
+    width: 140px;
+    height: 140px;
+    background-image: none;
+    background-color: rgba(97, 97, 97, 0.66);
+}
