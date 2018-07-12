@@ -23,10 +23,10 @@ socket.on('connect', function () {
     socket.on('swap', function (msg) {
         console.log('recieved swap');
         if (msg.id == getQueryVariable('id')) {
-            $('#defenders.pickrates').show();
-            $('#defenders.operators-grid-wrapper').show();
-            $('#attackers.pickrates').hide();
-            $('#attackers.operators-grid-wrapper').hide();
+            $('#defenders.pickrates').fadeIn();
+            $('#defenders.operators-grid-wrapper').fadeIn();
+            $('#attackers.pickrates').fadeOut();
+            $('#attackers.operators-grid-wrapper').fadeOut();
         }
     })
 
@@ -61,8 +61,8 @@ socket.on('connect', function () {
             }
             $(`.ban-op${i} > .ban-ops-name`).text(v.toUpperCase());
             $(`.ban-op${i}`).css('background-image', `url(images/operators/${v}.png)`);
-            $(`.ban-op${i}`).show();
-            $(`#B${i}`).show();
+            $(`.ban-op${i}`).fadeIn();
+            $(`#B${i}`).fadeIn();
         });
         
         // match.votes.forEach((v, i) => {
@@ -79,8 +79,8 @@ socket.on('connect', function () {
         //     if (i != 8) {
         //         $(`#overlay-${v} img`).attr('src', `images/teams/${match['code'+(i%2+1)]}.png`);
         //     }
-        //     $(`#overlay-${v}`).show();
-        //     $(`#A${i}`).show();
+        //     $(`#overlay-${v}`).fadeIn();
+        //     $(`#A${i}`).fadeIn();
         // });
     });
 });
