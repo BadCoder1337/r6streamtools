@@ -60,7 +60,7 @@
       width: 1920px;
       left: 0px;
       background-image: none;
-      background-color: rgb(66, 66, 66);
+      background-color: rgba(66, 66, 66, 0.9);
       height: 182px;
       top: 898px;
     }

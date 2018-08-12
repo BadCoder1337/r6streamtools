@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 var socketIO = require('socket.io');
-var bot = require('./lib/discord');
+var { ee } = require('./lib/discord');
 var cmds = require('./lib/commands');
 
 var PORT = process.env.PORT || 5000;
@@ -63,23 +63,23 @@ io.sockets.on('connection', function (socket) {
   })
 });
 
-bot.events.on('match', function (match) {
+ee.on('match', function (match) {
   console.log('sending match info');
   console.log(match);
   io.sockets.json.send(match);
 })
 
-bot.events.on('reload', function (msg) {
+ee.on('reload', function (msg) {
   console.log('sending reload');
   io.sockets.emit('reload', msg);
 });
 
-bot.events.on('swap', function (msg) {
+ee.on('swap', function (msg) {
   console.log('sending swap');
   io.sockets.emit('swap', msg);
 })
 
-bot.events.on('message', function (msg) {
+ee.on('message', function (msg) {
   console.log('recieve bot msg: ', msg);
   io.sockets.json.send(msg);
 })
