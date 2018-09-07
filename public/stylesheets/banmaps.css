@@ -28,7 +28,7 @@
       width: 500px;
       top: 75px;
       background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0) 1%, rgb(66, 66, 66) 98%);
-      height: 748px;
+      height: 900px;
     }
     .team-block-right {
       left: 1320px;
@@ -132,6 +132,9 @@
     }
     .team-action4 {
       top: 596px;
+    }
+    .team-action5 {
+      top: 748px; 
     }
     .team-action-block {
       position: absolute;

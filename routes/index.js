@@ -118,9 +118,25 @@ router.delete('/api', async (req, res) => {
       res.sendStatus(400); 
     }
   } catch (err) {
-    sendStatus(403)
+    res.sendStatus(403)
   }
 });
+
+router.options('/api', async (req, res) => {
+  try {
+    // console.log(req.headers);
+    const user = await getUser(req.headers['authorization']);
+    if (req.query.id) {
+      cmds.matchStart(req.query.id, user.id, req.query.channel);
+      res.sendStatus(200)
+    } else {
+      res.sendStatus(400); 
+    }
+  } catch (err) {
+    // console.log(err);
+    res.sendStatus(403)
+  }
+})
 
 /* GET home page. */
 router.get('/', async (req, res) => {

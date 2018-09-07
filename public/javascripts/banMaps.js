@@ -29,16 +29,16 @@ socket.on('connect', function () {
             //console.log(v);
             $(`#A${i}`).css('background-image', `url(images/maps/${v}.jpg)`);
             $(`#A${i} p`).text(match.pool.name[match.pool.id.indexOf(v)].toUpperCase());
-            if (i < (match.pool.id.length-mapAmount)) {
+            if ((match.matchType == 'bo1') || (match.matchType == 'bo3' && !([3,2].includes(i))) || (match.matchType == 'bo5' && !([5,4,3,2].includes(i)))) {
                 $(`#A${i} i`).text('clear');
                 $(`#A${i}`).addClass('team-action-red');
-            } else if (i != match.pool.id.length-1) {
+            } else /*if (i != match.pool.id.length-1) */ {
                 $(`#A${i} i`).text('check');
                 $(`#A${i}`).addClass('team-action-green');
             }
-            if (i != match.pool.id.length-1) {
-                $(`#overlay-${v} img`).attr('src', `images/teams/${match['code'+(i%2+1)]}.png`);
-            }
+            // if (i != match.pool.id.length-1) {
+            //     $(`#overlay-${v} img`).attr('src', `images/teams/${match['code'+(i%2+1)]}.png`);
+            // }
             $(`#overlay-${v}`).fadeIn();
             $(`#A${i}`).fadeIn();
         });
