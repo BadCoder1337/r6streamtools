@@ -14,7 +14,7 @@ socket.on('connect', function () {
     console.log('connected!');
 
     socket.on('reload', function (msg) {
-        if (msg.id == getQueryVariable('id')) {
+        if (msg.match.id == getQueryVariable('id')) {
             location.reload();
         }
     });
@@ -23,6 +23,7 @@ socket.on('connect', function () {
         console.log('msg: ', msg);
         var match = msg.match;
         if (match.id != getQueryVariable('id')) {return;}
+        if (msg.type == 'reload') {location.reload();}
         console.log('match recieved');
         var mapAmount = parseInt(match.matchType[2]);
         match.votes.forEach((v, i) => {

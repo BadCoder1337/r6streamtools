@@ -71,7 +71,7 @@ ee.on('match', function (match) {
 
 ee.on('reload', function (msg) {
   console.log('sending reload');
-  io.sockets.emit('reload', msg);
+  io.sockets.json.send(msg);
 });
 
 ee.on('swap', function (msg) {
